@@ -1,13 +1,14 @@
 <?php
-if(isset($_GET['code'])) {
-$code    = $_GET['code'];
-$title   = $_GET['title'];
-$file   = base64_decode($code); 
-$name = 'iegybest.in--'.$title.'.mp4';
-header("Content-Description: File Transfer"); 
-header("Content-Type: application/octet-stream"); 
-header("Content-Disposition: attachment; filename=\"". basename($name) ."\""); 
-readfile ($file);
-exit(); 
-}
-?>
+
+$con = mysqli_connect('remotemysql.com', 'tjwuFq57pY', 'O3stac5WDq');
+mysqli_query($con,"SET NAMES 'utf8'");
+mysqli_select_db($con, 'tjwuFq57pY');
+
+
+$Query_tag   = "SELECT * FROM `star` WHERE star_id";
+$Execute_tag = mysqli_query($con,$Query_tag);
+$row_tag     = mysqli_fetch_assoc($Execute_tag); 
+
+$name = $row_tag['star_name'];
+
+echo $name ;
