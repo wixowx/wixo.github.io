@@ -17,7 +17,7 @@
 <body>
    <div class="center">
        <img src="asset/icon-256.png">
-       <h3>Gameo Powred By Wixo Group</h3>
+       <h3>Powred By Wixo Group</h3>
    </div>
 </body>
 </html>
