@@ -31,8 +31,6 @@ foreach ($xpath->query("//script[@type=\"text/javascript\"]") as $script) {
         $sources = $match[0];
     }
 }
-
 $vidbam = substr($sources, 7);
-
-echo $vidbam;
+echo base64_encode($vidbam);
 ?>
