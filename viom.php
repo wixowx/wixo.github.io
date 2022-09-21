@@ -1,6 +1,6 @@
 <?php 
 $code = $_GET['co'];
-$link = base64_decode($link);
+$link = base64_decode($code);
 $url  = 'https://vidbam.org/'.$link;
 function get_data($url) {
 	$ch = curl_init();
