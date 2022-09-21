@@ -1,5 +1,5 @@
 <?php 
-$code = GET['co'];
+$code = $_GET['co'];
 $link = base64_decode($link);
 $url  = 'https://vidbam.org/'.$link;
 function get_data($url) {
