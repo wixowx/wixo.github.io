@@ -53,8 +53,9 @@ function get_remote_data($url, $post_paramtrs=false,  $curl_opts=[]){
 	return $answer;      
 }  
 $view_source = get_remote_data($url, $post_paramtrs=false,  $curl_opts=[]);   
-
-
+?>
+<center>
+<?php
 $dom = new DOMDocument;
 @$dom->loadHTML($view_source);
 foreach ($dom->getElementsByTagName('ul') as $div) {
@@ -65,10 +66,11 @@ foreach ($dom->getElementsByTagName('ul') as $div) {
             $num = $link->nodeValue;   
             if (stripos($url, 'mp4' )!==false){
                 
-            echo '<div style="margin-top: 10px;width: 320px;display: inline-block;background: linear-gradient(45deg, #0dd44a, #0ab53f);margin: 10px 0;padding: 10px;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;"><a style="color: #FFF;" target="_blank" href="'.$url.'"><i class="fa fa-cloud-download"></i> تحميل بجودة '.$num.'<a/></div><br/>';
+            echo '<div style="margin-top: 10px;width: 320px;display: inline-block;background: linear-gradient(45deg, #0dd44a, #0ab53f);margin: 10px 0;padding: 10px;text-align: center;color: #fff;border-radius: 5px;cursor: pointer;"><a style="color: #FFF;text-decoration: none;" target="_blank" href="'.$url.'"><i class="fa fa-cloud-download"></i> تحميل بجودة '.$num.'<a/></div><br/>';
           
           }
           }
      }
 }
 ?>
+</center>
